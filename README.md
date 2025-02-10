@@ -39,6 +39,14 @@ sont transformées en :
 06-10-2022,15:52:11.2,55,56,111
 ```
 
+## Installation
+
+Pour utiliser le programme Datafficheur, vous devez disposer de Python 3.
+Pour installer les dépendances requises, exécutez la commande suivante :
+```shell
+sudo apt-get install python3-wheel python3-pandas python3-seaborn
+```
+
 ## Utilisation
 
 Pour utiliser le programme Datafficheur, exécutez la commande suivante :
