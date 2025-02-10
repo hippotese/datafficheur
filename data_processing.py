@@ -86,7 +86,7 @@ def prepare_data(data):
     Prepare les donnees pour une analyse ulterieure en regroupant et en sommant les colonnes.
 
     Args:
-        data (pandas.DataFrame): Le DataFrame e preparer.
+        data (pandas.DataFrame): Le DataFrame à preparer.
 
     Returns:
         pandas.DataFrame: Le DataFrame prepare.
@@ -102,7 +102,8 @@ def prepare_data(data):
         df[col] = pd.DataFrame(data={"Efforts": data[col]}, index=data.index)
         df[col].index.name = "date"
     df = pd.concat(df, axis=1)
-    df_total = df.groupby(axis=1, level=1).sum()
+    df_total = df.T.groupby(level=1).sum().T
+
     for col in df_total.columns:
         df[("Total", col)] = df_total[col]
 
